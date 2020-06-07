@@ -36,7 +36,7 @@ class PublicationService
 
         $user_id = Auth::id();
 
-        $publications = $this->publicationRepository->whereNotIn('user_id',[$user_id]);
+        $publications = $this->publicationRepository->orderBy('id','desc')->whereNotIn('user_id',[$user_id]);
 
         return $publications;
     }
@@ -49,7 +49,7 @@ class PublicationService
 
         $user_id = Auth::id();
 
-        $publications = $this->publicationRepository->where(['user_id' => $user_id]);
+        $publications = $this->publicationRepository->orderBy('id','desc')->where(['user_id' => $user_id]);
 
         return $publications;
     }
