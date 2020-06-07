@@ -12,9 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Redirect('/publication');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth']],function (){
+    Route::resources([
+        'publication' => 'PublicationController',
+    ]);
+    Route::get('/myPublications', 'PublicationController@my')->name('publication.my');
+});
+
