@@ -3,8 +3,6 @@
 namespace App\Services;
 
 use App\Repositories\PublicationRepository;
-use App\Repositories\LikeRepository;
-use App\Repositories\CommentRepository;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,12 +10,8 @@ class PublicationService
 {
     /**
      * @var publicationRepository
-     * @var likeRepository
-     * @var commentRepository
      */
     protected $publicationRepository;
-    protected $likeRepository;
-    protected $commentRepository;
 
 
     /**
@@ -28,14 +22,10 @@ class PublicationService
      * @return void
      */
     public function __construct(
-        PublicationRepository $publicationRepository,
-        LikeRepository $likeRepository,
-        CommentRepository $commentRepository
+        PublicationRepository $publicationRepository
     )
     {
         $this->publicationRepository = $publicationRepository;
-        $this->likeRepository = $likeRepository;
-        $this->commentRepository = $commentRepository;
     }
 
     /*

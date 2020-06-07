@@ -17,7 +17,7 @@
 					<div class="card-body">
 						<h5>{{ $publication->description }}</h5>
 						<div class=" ">
-							<img src="{{ asset('/image/'.$publication->image) }}" class="w-100">
+							<img src="{{ asset('/image/'.$publication->image) }}" class="w-100 publication-image">
 						</div>
 					</div>
 				</div>

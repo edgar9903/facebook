@@ -6,7 +6,6 @@ use App\Http\Requests\PublicationUpdate;
 use App\Http\Requests\PublicationCreate;
 use App\Services\PublicationService;
 use App\Services\UserService;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class PublicationController extends Controller
@@ -121,7 +120,7 @@ class PublicationController extends Controller
     {
         if($this->publicationService->delete($id)) {
 
-            return Redirect(route('publication.index'));
+            return Redirect('/myPublications');
         }
 
         return Redirect::back();

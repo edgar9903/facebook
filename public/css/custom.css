@@ -1,0 +1,14 @@
+.send-comment{
+    cursor: pointer;
+}
+.publication-image{
+    height: 100%;
+    max-height: 600px;
+    object-fit: contain;
+}
+.time{
+    position: absolute;
+    right: 4%;
+    top: 2px;
+    font-size: 8px;
+ }

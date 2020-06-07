@@ -22,5 +22,11 @@ Route::group(['middleware' => ['auth']],function (){
         'publication' => 'PublicationController',
     ]);
     Route::get('/myPublications', 'PublicationController@my')->name('publication.my');
+
+    Route::group(['prefix' => 'publication','as' => 'publication'],function () {
+        Route::post('/like', 'PublicationEventController@like')->name('like');
+        Route::post('/dislike', 'PublicationEventController@dislike')->name('dislike');
+        Route::post('/comment', 'PublicationEventController@comment')->name('comment');
+    });
 });
 
